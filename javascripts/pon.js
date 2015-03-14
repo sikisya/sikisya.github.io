@@ -1,4 +1,4 @@
-var canvas;
+ï»¿var canvas;
 var tx;
 var own_y, enemy_y, ball_x, ball_y;
 var key_buf = new Array();
@@ -11,7 +11,7 @@ window.onload = function() {
 	canvas.width = 500;
 	canvas.height = 400;
 	tx = canvas.getContext('2d');
-	tx.font = "14pt ƒƒCƒŠƒI"
+	tx.font = "14pt ãƒ¡ã‚¤ãƒªã‚ª"
 	own_y = 200;
 	enemy_y = 200;
 	ball_x = 250;
@@ -61,10 +61,10 @@ function update() {
 }
 
 function lose() {
-	var str = point+"“_‚Å‚µ‚½B"
+	var str = point+"ç‚¹ã§ã—ãŸã€‚"
 	tx.fillText(str,200, 40);
-	tx.font = "8pt ƒƒCƒŠƒI"
-	tx.fillText("F5‰Ÿ‚µ‚ÄÄ’§í",220,60);
+	tx.font = "8pt ãƒ¡ã‚¤ãƒªã‚ª"
+	tx.fillText("F5æŠ¼ã—ã¦å†æŒ‘æˆ¦",220,60);
 }
 
 document.onkeydown = function(e) {
