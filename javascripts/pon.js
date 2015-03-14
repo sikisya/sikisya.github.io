@@ -1,4 +1,4 @@
-﻿var canvas;
+var canvas;
 var tx;
 var own_y, enemy_y, ball_x, ball_y;
 var key_buf = new Array();
