@@ -11,7 +11,7 @@ window.onload = function() {
 	canvas.width = 500;
 	canvas.height = 400;
 	tx = canvas.getContext('2d');
-	tx.font = "14pt メイリオ"
+	tx.font = "14pt メイリオ";
 	own_y = 200;
 	enemy_y = 200;
 	ball_x = 250;
@@ -21,7 +21,7 @@ window.onload = function() {
 	st = true;
 	point = 0;
 	update();
-}
+};
 
 function update() {
 	tx.clearRect(0, 0, canvas.width, canvas.height);
@@ -61,20 +61,20 @@ function update() {
 }
 
 function lose() {
-	var str = point+"点でした。"
+	var str = point+"点でした。";
 	tx.fillText(str,200, 40);
-	tx.font = "8pt メイリオ"
+	tx.font = "8pt メイリオ";
 	tx.fillText("F5押して再挑戦",220,60);
 }
 
 document.onkeydown = function(e) {
 	key_buf[e.keyCode] = true;
-}
+};
 
 document.onkeyup = function(e) {
 	key_buf[e.keyCode] = false;
-}
+};
 
 window.onblur = function() {
 	key_buf.lenght = 0;
-}
+};
