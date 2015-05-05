@@ -428,7 +428,7 @@ var Game = (function () {
         var y = e.clientY - this.element.offsetTop;
 
         if (this.gameMode == 2 && x >= 550 && x < 590 && y >= 10 && y < 50) {
-            var url = "https://twitter.com/share?text=" + encodeURIComponent("[とつげき愛ちゃん]" + this.point + "点だよー！！！ #とつ愛 http://sikisya.github.io/ai.html");
+            var url = "https://twitter.com/share?text=" + encodeURIComponent("[とつげき愛ちゃん]" + this.point + "点だよー！！！ #とつ愛");
             window.open(url);
         }
     };
