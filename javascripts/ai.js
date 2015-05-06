@@ -19,8 +19,6 @@ var Game = (function () {
         this.own = new Own();
         this.context = this.element.getContext('2d');
         this.keyBuffer = new Array();
-        this.canJumpFlag = false;
-        this.canJumpFlag = true;
         this.chain = new Array(3);
         this.bulletCount = 0;
         this.bulletNum = 128;
@@ -33,7 +31,7 @@ var Game = (function () {
         this.onTwitterButton = 0;
 
         this.image = new Image();
-        this.image.src = "images/image.png";
+        this.image.src = "images/ai.png";
 
         this.Init();
 
@@ -46,6 +44,7 @@ var Game = (function () {
         this.counter = 0;
         this.invincibleCounter = 0;
         this.point = 0;
+        this.canJumpFlag = false;
         this.chainCount = 1;
         this.chainNum = 0;
         this.chainNoticeCount = 0;
@@ -172,8 +171,10 @@ var Game = (function () {
                         }
                     }
                 }
-
-                this.point += this.chainCount;
+                var basic = 1;
+                if (this.own.life == 1)
+                    basic = 10;
+                this.point += basic * this.chainCount;
 
                 break;
 
@@ -344,7 +345,7 @@ var Game = (function () {
                 break;
         }
         this.context.font = "6pt 'メイリオ'";
-        this.context.fillText("v0.9", 3, 397);
+        this.context.fillText("v0.91", 3, 397);
     };
 
     Game.prototype.shotBullet = function (mode, x, y, speed, rotate) {
@@ -428,7 +429,7 @@ var Game = (function () {
         var y = e.clientY - this.element.offsetTop;
 
         if (this.gameMode == 2 && x >= 550 && x < 590 && y >= 10 && y < 50) {
-            var url = "https://twitter.com/share?text=" + encodeURIComponent("[とつげき愛ちゃん]" + this.point + "点だよー！！！ #とつ愛");
+            var url = "https://twitter.com/share?" + "url=" + encodeURIComponent("http://sikisya.github.io/ai.html") + "&text=" + encodeURIComponent("[とつげき愛ちゃん]" + this.point + "点だよー！！！ #とつ愛");
             window.open(url);
         }
     };
